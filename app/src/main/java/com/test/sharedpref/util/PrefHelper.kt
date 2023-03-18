@@ -11,7 +11,7 @@ import java.io.Serializable
 //2 mistakes leading to crash
 class PrefHelper(private val prefDataDao: PrefDataDao) {
 
-    fun get(key: String): String? {
+    fun get(key: String): String? {//can make this private, but kept for returning json string
         var data: String?
         runBlocking {
             data = prefDataDao.get(key)?.value // silly mistake was parsing prefData instead of value
